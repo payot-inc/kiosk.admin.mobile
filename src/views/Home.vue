@@ -55,7 +55,10 @@
       <dd>
         <v-row>
           <v-col cols="6" v-for="item in quickBtns" :key="item">
-            <v-btn outlined>{{item.name}}</v-btn>
+            <v-btn outlined>
+              <v-icon>{{item.icon}}</v-icon>
+              <span>{{item.name}}</span>
+            </v-btn>
           </v-col>
         </v-row>
       </dd>
@@ -131,16 +134,20 @@ export default {
       ],
       quickBtns:[
         {
-          name:'장비원격제어',
+          icon:'mdi-wifi',
+          name:'장비 원격투입',
         },
         {
-          name:'키오스크설정',
+          icon:'mdi-cog',
+          name:'키오스크 제어',
         },
         {
-          name:'키오스크제어',
+          icon:'mdi-account-settings',
+          name:'회원포인트 지급/차감',
         },
         {
-          name:'회원관리(포인트)',
+          icon:'mdi-account-details',
+          name:'회원 이용내역',
         },
       ]
     }
@@ -254,9 +261,18 @@ export default {
         border:0px;
         border-right:1px solid #e2e2e2;
         border-radius:0px;
-        font-size:11px;
-        font-weight:400;
         background:#fff;
+        height:45px;
+
+        .v-icon{
+          margin-right:10px;
+          font-size:18px;
+          color:#aaa;
+        }
+        span{
+          font-size:12px;
+          font-weight:400;
+        }
       }
 
       .v-btn:last-child{border-right:0px;}
