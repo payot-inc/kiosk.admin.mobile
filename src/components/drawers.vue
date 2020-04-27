@@ -76,7 +76,7 @@ export default {
   display:flex;
   flex-direction: column;
   justify-content: center;
-  background:#0F83DB;
+  background:#EE2073;
   min-height:70px;
   padding:16px;
   p{padding:0px;margin:0px;color:#fff;}
