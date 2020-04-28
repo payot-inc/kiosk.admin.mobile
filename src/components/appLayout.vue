@@ -23,8 +23,4 @@ export default {
 
 <style lang="scss" scoped>
 
-.v-content{
-  margin-top:56px;
-}
-
 </style>

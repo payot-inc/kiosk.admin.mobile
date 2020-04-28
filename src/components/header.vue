@@ -34,9 +34,7 @@ export default {
 <style lang="scss" scoped>
 
 #header{
-  position:fixed;
-  top:0px;
-  left:0px;
+
   height:56px;
   padding:0px;
   font-family:'SCDream';
