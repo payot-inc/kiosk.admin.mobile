@@ -2,7 +2,6 @@
   <v-dialog
     v-model="visible"
     width="100%"
-    fullscreen
   >
     <div class="user-info-modal">
       <div class="modalHead">
@@ -68,7 +67,7 @@ export default {
 .user-info-modal{
   display:flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   background:#fff;
   min-height:100%;
 

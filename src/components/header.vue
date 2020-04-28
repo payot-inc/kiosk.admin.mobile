@@ -34,14 +34,22 @@ export default {
 <style lang="scss" scoped>
 
 #header{
+  position:fixed;
+  top:0px;
+  left:0px;
+  height:56px;
+  padding:0px;
   font-family:'SCDream';
+  width:100%;
+  z-index:2;
 
   .gnb{
     display:flex;
     align-items: center;
     justify-content: space-between;
     background:#292929;
-    height:50px;
+    width:100%;
+    height:56px;
 
     .logo{
       font-size:18px;
@@ -49,8 +57,8 @@ export default {
     }
     
     .v-btn{
-      min-width:50px;
-      height:50px;
+      min-width:56px;
+      height:56px;
       color:#fff;
       border:0px;
       border-radius:0px; 
