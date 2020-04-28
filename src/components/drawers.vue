@@ -2,7 +2,7 @@
   <v-navigation-drawer
     v-model="visible"
     absolute
-    right
+    left
     temporary
   > 
     <div class="inner">

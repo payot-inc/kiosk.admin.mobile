@@ -1,14 +1,14 @@
 <template>
   <div id="header">
     <div class="gnb">
-      <v-btn href="#" class="logo" text @click="$router.push('/')">
-        매장관리자
-      </v-btn>
       <v-btn
         @click="DrawerOpen"
         text
       >
         <v-icon>mdi-menu</v-icon>
+      </v-btn>
+      <v-btn href="#" class="logo" text @click="$router.push('/')">
+        페이오티 매장관리자
       </v-btn>
     </div>
   </div>
@@ -46,7 +46,7 @@ export default {
   .gnb{
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     background:#292929;
     width:100%;
     height:56px;
@@ -61,7 +61,8 @@ export default {
       height:56px;
       color:#fff;
       border:0px;
-      border-radius:0px; 
+      border-radius:0px;
+      padding:0px; 
     }
   }
 
