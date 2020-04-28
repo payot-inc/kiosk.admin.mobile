@@ -49,7 +49,10 @@
             </table>
           </dd>
         </dl>
-        
+      </div>
+
+      <div class="modal-bottom">
+        <v-btn outlined @click="open(false)">닫기</v-btn>
       </div>
     </div>
   </v-dialog>
@@ -102,7 +105,7 @@ export default {
   }
 
   .modalCont{
-   padding:15px;
+   padding:15px 15px 50px 15px;
 
     dl{
       margin-bottom:20px;
@@ -142,6 +145,24 @@ export default {
       }
     }
 
+    
+
+  }
+
+  .modal-bottom{
+    position:fixed;
+    width:100%;
+    bottom:0px;
+    .v-btn{
+      width:100%;
+      height:40px;
+      background:#292929;
+      border:0px;
+      border-radius:0px;
+      color:#fff;
+      font-weight:500
+      
+    }
   }
 
   
