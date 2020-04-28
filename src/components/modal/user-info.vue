@@ -2,6 +2,7 @@
   <v-dialog
     v-model="visible"
     width="100%"
+    fullscreen
   >
     <div class="user-info-modal">
       <div class="modalHead">
@@ -39,7 +40,7 @@
                 <th>차감</th>
                 <th>적립</th>
               </tr>
-              <tr v-for="item in 10" :key="item">
+              <tr v-for="item in 20" :key="item">
                 <td>2020-04-20</td>
                 <td>5,000</td>
                 <td>0</td>
@@ -65,18 +66,20 @@ export default {
 <style lang="scss" scoped>
 
 .user-info-modal{
+  position:relative;
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
   background:#fff;
   min-height:100%;
 
-
   .modalHead{
     display:flex;
     align-items: center;
-    padding:15px;
+    width:100%;
+    height:56px;
     border-bottom:1px solid #e2e2e2;
+    padding:0 15px;
     
   
     h4{
