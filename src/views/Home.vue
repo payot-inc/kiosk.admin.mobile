@@ -64,40 +64,84 @@
       </dd>
     </dl>
 
-    <dl class="week-sales">
+    <dl class="orderTabs">
       <dt>
-        <h4>최근매출(7일)</h4>
+        <h4>실시간 매출정보</h4>
       </dt>
       <dd>
-        <div class="sales-item" v-for="item in 7" :key="item">
-          <span>
-            <label>2019-04.2{{item}} (수요일)</label>
-            <strong>840,000원</strong>
-          </span>
-          <span>
-            <label>장비현금</label>
-            <strong>840,000원</strong>
-          </span>
-          <span>
-            <label>키오스크(현금)</label>
-            <strong>840,000원</strong>
-          </span>
-          <span>
-            <label>키오스크(카드)</label>
-            <strong>840,000원</strong>
-          </span>
-          <span>
-            <label>포인플러스</label>
-            <strong>840,000원</strong>
-          </span>
-          <span>
-            <label>데일리세탁</label>
-            <strong>840,000원</strong>
-          </span>
-        </div>
+
+        <v-tabs
+          v-model="tab"
+          background-color="#fff"
+          height="40px"
+          show-arrows
+        >
+          <v-tab v-for="item in tabItems" :key="item.tab" class="tab-head">
+            {{item.tabName}}
+          </v-tab>
+        </v-tabs>
+
+        <v-tabs-items v-model="tab" class="tab-contents">
+          <v-tab-item
+            v-for="item in tabItems"
+            :key="item.tab"
+          >
+            <div class="order-item">
+             <div class="item-head">2020-04-20 12:34:31</div>
+              <div class="item-body">
+                <div class="text">
+                  <strong>1번세탁기</strong>
+                  <span>(80kg)</span>
+                </div>
+                <div class="price">
+                  5,000 원
+                </div>
+              </div>
+            </div>
+
+            <div class="order-item">
+             <div class="item-head">2020-04-20 12:34:31</div>
+              <div class="item-body">
+                <div class="text">
+                  <strong>1번세탁기</strong>
+                  <span>(80kg)</span>
+                </div>
+                <div class="price">
+                  5,000 원
+                </div>
+              </div>
+            </div>
+
+            <div class="order-item">
+             <div class="item-head">2020-04-20 12:34:31</div>
+              <div class="item-body">
+                <div class="text">
+                  <strong>1번세탁기</strong>
+                  <span>(80kg)</span>
+                </div>
+                <div class="price">
+                  5,000 원
+                </div>
+              </div>
+            </div>
+
+            <div class="order-item">
+             <div class="item-head">2020-04-20 12:34:31</div>
+              <div class="item-body">
+                <div class="text">
+                  <strong>1번세탁기</strong>
+                  <span>(80kg)</span>
+                </div>
+                <div class="price">
+                  5,000 원
+                </div>
+              </div>
+            </div>
+          </v-tab-item>
+        </v-tabs-items>
+
       </dd>
     </dl>
-
   </div>
 </template>
 
@@ -110,6 +154,14 @@ export default {
     return{
       date: new Date().toISOString().substr(0, 10),
       menu: false,
+      showArrow:false,
+      tab:null,
+      tabItems:[
+        {tab:0, tabName:'장비현금',},
+        {tab:1, tabName:'키오스크',},
+        {tab:2, tabName:'포인플러스',},
+        {tab:3, tabName:'데일리세탁',},
+      ],
       total:[
         {
           name:'장비현금',
@@ -174,6 +226,10 @@ export default {
 
       h4{font-weight:400;font-size:14px;}
     }
+  }
+
+  dl:last-child{
+    margin-bottom:0px;
   }
 
   .today-sales{
@@ -279,34 +335,58 @@ export default {
     }
   } // quick-nav
 
-  .week-sales{
-    .sales-item{
-      border-bottom:1px solid #e2e2e2;
-      padding:10px;
+  .orderTabs{
+    dd{ 
+      background:#f2f2f2;
 
-      span{
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom:8px;
-        font-size:11px;
-        
-        label{color:#888;}
-        strong{font-weight:normal}
+      .v-item-group .v-slide-group__prev{
+        display:none;
       }
-      
-      span:first-child{
-        padding-bottom:8px;
-        border-bottom:1px dashed #e2e2e2;
-        font-size:12px;
 
-        label{color:#494949;}
-        strong{color:#DB0F90}
+      .tab-contents{background:#f2f2f2;padding-top:5px;}
+      .order-item:last-child{margin-bottom:0px;}
+      .order-item{
+        padding:0 10px;
+        border-bottom:1px solid #e2e2e2;
+        border-top:1px solid #e2e2e2;
+        margin-bottom:5px;
+        background:#fff;
+                
+        .item-head{
+          width:100%;
+          height:32px;
+          display:flex;
+          justify-content: space-between;
+          align-items: center;
+          color:#888;
+          font-size:11px;
+          border-bottom:1px dashed #e2e2e2;
+        }
+
+        .item-body{
+          display:flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          width:100%;
+          padding:10px 0;
+
+          .text{
+            strong{display:block; font-size:14px;}
+            span{display:block;font-size:12px;color:#888}
+          }
+          .price{
+            font-size:14px;
+            font-weight:500;
+            color:#DB0F90;
+          }
+        }
+
       }
     }
   }
-
 }
-  
+
+
+
 
 </style>
