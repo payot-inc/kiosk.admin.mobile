@@ -75,6 +75,7 @@
           background-color="#fff"
           height="40px"
           show-arrows
+          color="#D20A61"
         >
           <v-tab v-for="item in tabItems" :key="item.tab" class="tab-head">
             {{item.tabName}}
@@ -86,7 +87,7 @@
             v-for="item in tabItems"
             :key="item.tab"
           >
-            <div class="order-item">
+            <div class="eq-item">
              <div class="item-head">2020-04-20 12:34:31</div>
               <div class="item-body">
                 <div class="text">
@@ -99,44 +100,30 @@
               </div>
             </div>
 
-            <div class="order-item">
+            <div class="kiosk-item">
              <div class="item-head">2020-04-20 12:34:31</div>
               <div class="item-body">
-                <div class="text">
-                  <strong>1번세탁기</strong>
-                  <span>(80kg)</span>
-                </div>
-                <div class="price">
-                  5,000 원
-                </div>
+                <p>010-4424-4885</p>
+                <span>
+                  <label>사용장비명</label>
+                  <strong>1번 세탁기</strong>
+                </span>
+                <span>
+                  <label>투입금액</label>
+                  <strong>7500</strong>
+                </span>
+                <span>
+                  <label>결제금액</label>
+                  <strong>1000</strong>
+                </span>
+                <span>
+                  <label>추가포인트</label>
+                  <strong>250</strong>
+                </span>
               </div>
             </div>
 
-            <div class="order-item">
-             <div class="item-head">2020-04-20 12:34:31</div>
-              <div class="item-body">
-                <div class="text">
-                  <strong>1번세탁기</strong>
-                  <span>(80kg)</span>
-                </div>
-                <div class="price">
-                  5,000 원
-                </div>
-              </div>
-            </div>
-
-            <div class="order-item">
-             <div class="item-head">2020-04-20 12:34:31</div>
-              <div class="item-body">
-                <div class="text">
-                  <strong>1번세탁기</strong>
-                  <span>(80kg)</span>
-                </div>
-                <div class="price">
-                  5,000 원
-                </div>
-              </div>
-            </div>
+            
           </v-tab-item>
         </v-tabs-items>
 
@@ -344,8 +331,8 @@ export default {
       }
 
       .tab-contents{background:#f2f2f2;padding-top:5px;}
-      .order-item:last-child{margin-bottom:0px;}
-      .order-item{
+      .eq-item:last-child{margin-bottom:0px;}
+      .eq-item{
         padding:0 10px;
         border-bottom:1px solid #e2e2e2;
         border-top:1px solid #e2e2e2;
@@ -379,6 +366,37 @@ export default {
             font-weight:500;
             color:#DB0F90;
           }
+        }
+      }
+
+      .kiosk-item:last-child{margin-bottom:0px;}
+      .kiosk-item{
+        padding:0 10px;
+        border-bottom:1px solid #e2e2e2;
+        border-top:1px solid #e2e2e2;
+        margin-bottom:5px;
+        background:#fff;
+                
+        .item-head{
+          width:100%;
+          height:32px;
+          display:flex;
+          justify-content: space-between;
+          align-items: center;
+          color:#888;
+          font-size:11px;
+          border-bottom:1px dashed #e2e2e2;
+        }
+
+        .item-body{
+          display:flex;
+          flex-direction: column;
+          width:100%;
+          padding:10px 0;
+          p{margin-bottom:10px;font-weight:500;}
+          span{display:flex;flex:1;justify-content: space-between;margin-bottom:5px;}
+          label{color:#888}
+          strong{font-weight:500}
         }
 
       }
