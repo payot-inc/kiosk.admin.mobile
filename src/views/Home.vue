@@ -188,6 +188,10 @@ export default {
           icon:'mdi-account-details',
           name:'회원 이용내역',
         },
+        {
+          icon:'mdi-message',
+          name:'회원 문자발송',
+        },
       ]
     }
   },
@@ -306,6 +310,7 @@ export default {
         border-radius:0px;
         background:#fff;
         height:45px;
+        justify-content: flex-start;
 
         .v-icon{
           margin-right:10px;

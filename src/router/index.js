@@ -16,6 +16,7 @@ import KioskControl from '../views/kiosk/kiosk-control.vue';
 import KioskMember from '../views/kiosk/member.vue';
 import MemberPointControl from '../views/kiosk/member-point-control.vue';
 import MemberPointList from '../views/kiosk/member-point-list.vue';
+import Message from '../views/kiosk/message.vue';
 
 import PoinTodaySales from '../views/poin/today-sales.vue';
 import PoinMonthSales from '../views/poin/month-sales.vue';
@@ -25,6 +26,11 @@ import DailyTodaySales from '../views/daily/today-sales.vue';
 import DailyMonthSales from '../views/daily/month-sales.vue';
 import DailyCalc from '../views/daily/calc.vue';
 
+import DaysStats from '../views/stats/days.vue';
+import TimeStats from '../views/stats/time.vue';
+import MonthStats from '../views/stats/month.vue';
+import WeekStats from '../views/stats/week.vue';
+import Cost from '../views/stats/cost.vue'
 
 Vue.use(VueRouter);
 
@@ -140,6 +146,15 @@ export const routes = [
           title: '회원 포인트 지급/차감 내역'
         },
       },
+      {
+        path:"/kiosk/message",
+        name:'message',
+        component: Message,
+        meta:{
+          groupTitle: '키오스크',
+          title: '문자발송'
+        },
+      },
     ]
   },
 
@@ -210,6 +225,59 @@ export const routes = [
         meta:{
           groupTitle: '데일리세탁',
           title: '정산내역'
+        },
+      },
+    ]
+  },
+  {
+    path: '/stats',
+    name: 'stats',
+    meta: { groupTitle: '매출통계', icon: 'chart-bar' },
+    component:SubLayout,
+    children: [
+      {
+        path:"/stats/days",
+        name:'stats-days',
+        component: DaysStats,
+        meta:{
+          groupTitle: '매출통계',
+          title: '일자별 매출분석'
+        },
+      },
+      {
+        path:"/stats/month",
+        name:'stats-month',
+        component: MonthStats,
+        meta:{
+          groupTitle: '매출통계',
+          title: '월별 매출분석'
+        },
+      },
+      {
+        path:"/stats/week",
+        name:'stats-week',
+        component: WeekStats,
+        meta:{
+          groupTitle: '매출통계',
+          title: '요일별 매출분석'
+        },
+      },
+      {
+        path:"/stats/time",
+        name:'stats-time',
+        component: TimeStats,
+        meta:{
+          groupTitle: '매출통계',
+          title: '시간대별 매출분석'
+        },
+      },
+      {
+        path:"/stats/cost",
+        name:'stats-cost',
+        component: Cost,
+        meta:{
+          groupTitle: '매출통계',
+          title: '나의 매장 비용계산'
         },
       }, 
     ]
